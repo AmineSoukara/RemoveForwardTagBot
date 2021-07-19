@@ -3,7 +3,6 @@
 # Written by Amine Soukara <AmineSoukara@gmail.com>, June 2021
 
 import os
-from io import BytesIO
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -15,7 +14,7 @@ Alty = Client(
 )
 
 
-ALTY_CHANNEL = "-1001356154993"
+ALTY_CHANNEL = int(os.environ.get("ALTY_CHANNEL", "-1001356154993"))
 
 START_TXT = """
 Hello {}, I'm Alive.
