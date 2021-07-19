@@ -60,6 +60,14 @@ async def editcap(c, m):
         caption = "@DezAlty", 
         ) 
 
+@Alty.on_message(filters.chat(ALTY_CHANNEL) & filters.photo & filters.caption)
+async def editcap(c, m):
+    cap = m.caption
+    await c.edit_message_caption(
+        chat_id = m.chat.id,
+        message_id = m.message_id,
+        caption = cap + "\n@DezAlty", 
+        ) 
 
 
 Alty.run()
