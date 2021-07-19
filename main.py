@@ -61,7 +61,7 @@ async def editcap(c, m):
         ) 
 
 @Alty.on_message(filters.chat(ALTY_CHANNEL) & filters.photo & filters.caption)
-async def editcap(c, m):
+async def editcappic(c, m):
     cap = m.caption
     await c.edit_message_caption(
         chat_id = m.chat.id,
